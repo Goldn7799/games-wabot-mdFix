@@ -270,6 +270,7 @@ global.owner = [
 [![DineshValor](https://github.com/DineshValor.png?size=100)](https://github.com/DineshValor)
 [![TeamMars20](https://github.com/TeamMars20.png?size=100)](https://github.com/TeamMars20)
 
-#### Version 2.31-FixIt
-**These Version has modived and fix bug, add feature by**
+# Version Information
+### Version 2.31-FixIt
+#### These Version has modived and fix bug, add feature by
 [![Goldn7799](https://github.com/Goldn7799.png?size=100)](https://github.com/Goldn7799)
