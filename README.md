@@ -200,6 +200,9 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 )
 ```
 
+### My node crashed?
+> Check allocation memory for node
+> use this flag ```node --max-old-space-size=3072 .```
 
 ### Why my plugins not working in this multi-device?
 > Please cek syntax error on your plugins. and maybe your script still using CJS
