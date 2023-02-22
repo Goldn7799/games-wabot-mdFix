@@ -1,8 +1,12 @@
 import Connection from '../lib/connection.js'
+import dbs from "../lib/database.js";
+let db = dbs.data
+import { plugins } from '../lib/plugins.js';
 import { cpus as _cpus, totalmem, freemem } from 'os'
 // import util from 'util'
 import { performance } from 'perf_hooks'
 import { sizeFormatter } from 'human-readable'
+import e from 'express'
 let format = sizeFormatter({
   std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
   decimalPlaces: 2,
@@ -42,15 +46,53 @@ let handler = async (m, { conn }) => {
   await message
   let neww = performance.now()
   let speed = neww - old
+  let users = Object.keys(db.users).length
+  let registred = Object.values(db.users).filter(user => user.registered == true).length
+  let id = [], stats = [], chatCount = 0, groupCount = 0, groupBannedCount = 0, chatBannedCount = 0, featureCount = 0;
+  for(let prop in db.users){ 
+    id.push(prop);
+  }
+  stats = Object.values(plugins).map(pl => {
+    return {
+      help: Array.isArray(pl.tags) ? pl.help : [pl.help]
+    }
+  })
+  stats.map(dt =>{
+    featureCount += dt.help.length;
+  })
+  id.map(dt => {
+    if(dt.split("@")[1] === "s.whatsapp.net"){
+      chatCount++;
+    }else if (dt.split("@")[1] === "g.us"){
+      groupCount++
+    };
+  })
+  stats.map(dt =>{
+    featureCount++;
+  })
+  Object.entries(db.users).map(dt =>{
+    if(dt[0].split("@")[1] === "s.whatsapp.net"){
+      if(dt[1].banned){
+        chatBannedCount++;
+      };
+    }else if (dt[0].split("@")[1] === "g.us"){
+      if (dt[1].isBanned){
+        groupBannedCount++;
+      };
+    };
+  })
   m.reply(`
 Merespon dalam ${speed} millidetik
 
 💬 Status :
-- *${groupsIn.length}* Group Chats
+- Total Feature *${featureCount} Features*
+- *${groupCount}* Group Chats
 - *${groupsIn.length}* Groups Joined
 - *${groupsIn.length - groupsIn.length}* Groups Left
-- *${chats.length - groupsIn.length}* Personal Chats
-- *${chats.length}* Total Chats
+- *${groupBannedCount}* Groups Banned
+- *${chatBannedCount}* Personal Chats Banned
+- *${chatCount}* Personal Chats
+- *${users}* Total Chats
 
 💻 *Server Info* :
 RAM: ${format(totalmem() - freemem())} / ${format(totalmem())}

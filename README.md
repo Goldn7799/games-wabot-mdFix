@@ -16,7 +16,7 @@
 
 
 #### Deploy to Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BochilGaming/games-wabot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Goldn7799/games-wabot-mdFix)
 
 #### Heroku Buildpack
 | BuildPack | LINK |
@@ -32,8 +32,8 @@ $ pkg install git -y
 $ pkg install nodejs -y
 $ pkg install ffmpeg -y
 $ pkg install imagemagick -y
-$ git clone https://github.com/BochilGaming/games-wabot -b multi-device
-$ cd games-wabot
+$ git clone https://github.com/GoldnSword/games-wabot-mdFix
+$ cd games-wabot-mdFix
 $ npm i 
 ```
 If error try using yarn instead of npm, see [here](https://github.com/BochilGaming/games-wabot/tree/multi-device#if-npm-install-failed--try--using-yarn-instead-of-npm)
@@ -80,8 +80,8 @@ apt install wget curl git ffmpeg imagemagick build-essential libcairo2-dev libpa
 ubuntu
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 apt install -y nodejs gcc g++ make
-git clone https://github.com/BochilGaming/games-wabot -b multi-device
-cd games-wabot
+git clone https://github.com/Goldn7799/games-wabot-mdFix -b multi-device
+cd games-wabot-mdFix
 npm install
 npm update
 ```
@@ -96,8 +96,8 @@ npm update
 * Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/BochilGaming/games-wabot -b multi-device
-cd games-wabot
+git clone https://github.com/Goldn7799/games-wabot-mdFix -b multi-device
+cd games-wabot-mdFix
 npm install
 npm update
 ```
@@ -269,3 +269,7 @@ global.owner = [
 [![itsmeR1F4I](https://github.com/itsmeR1F4I.png?size=100)](https://github.com/itsmeR1F4I)
 [![DineshValor](https://github.com/DineshValor.png?size=100)](https://github.com/DineshValor)
 [![TeamMars20](https://github.com/TeamMars20.png?size=100)](https://github.com/TeamMars20)
+
+#### Version 2.31-FixIt
+These Version has modived and fix bug, add feature by
+[![Goldn7799](https://github.com/Goldn7799.png?size=100)](https://github.com/Goldn7799)
