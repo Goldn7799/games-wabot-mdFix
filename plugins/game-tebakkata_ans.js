@@ -2,7 +2,7 @@ import similarity from 'similarity'
 import db from '../lib/database.js'
 
 const threshold = 0.72
-export async function before(m) {
+export async function before(m, { conn }) {
     let id = m.chat
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*teka/i.test(m.quoted.text) || /.*(hint|teka)/i.test(m.text))
         return !0
