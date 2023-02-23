@@ -274,6 +274,6 @@ global.owner = [
 [![TeamMars20](https://github.com/TeamMars20.png?size=100)](https://github.com/TeamMars20)
 
 # Version Information
-### Version 3.12-AddIt
+### Version 3.14-AddIt
 #### These Version has modived and fix bug, add feature by
 [![Goldn7799](https://github.com/Goldn7799.png?size=100)](https://github.com/Goldn7799)

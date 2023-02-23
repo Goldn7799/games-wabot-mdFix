@@ -130,6 +130,8 @@ dist
 .pnp.*
 
 sessions/
+backups/
+tmp/
 data.store.json
 database.json
 package-lock.json
