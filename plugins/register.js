@@ -3,15 +3,15 @@ import dbs from "../lib/database.js"
 let handler = (m, { text })=>{
   try {
     let db = dbs.data;
-    if(db.users[m.chat].registered){
-      m.reply(`Kamu Sudah terdaftar sebagai *${db.users[m.chat].name}*`);
+    if(db.users[m.sender].registered){
+      m.reply(`Kamu Sudah terdaftar sebagai *${db.users[m.sender].name}*`);
     }else {
-      if (text){
-        db.users[m.chat].registered = true;
-        db.users[m.chat].name = text;
+      if (text&&text.length >= 4){
+        db.users[m.sender].registered = true;
+        db.users[m.sender].name = text;
         m.reply(`Sukses Register sebagai *${text}*`);
       }else {
-        m.reply("Mohon masukkan Nama")
+        m.reply("Mohon masukkan Nama/Karakter minimal 4")
       }
     }
   }catch {

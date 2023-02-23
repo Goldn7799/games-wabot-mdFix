@@ -5,7 +5,7 @@ let handler = async (m, { conn }) => {
     let json = conn.siapakahaku[id][1]
     let ans = json.jawaban
     let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_')
-    m.reply('```' + clue + '```')
+    setTimeout(()=>{ m.reply('```' + clue + '```') }, 250)
 }
 handler.command = /^who$/i
 
